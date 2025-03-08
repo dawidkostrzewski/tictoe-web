@@ -1,0 +1,14 @@
+<div class="game">
+    <div class="game__loading-text">Searching game ....</div>
+    <div class="game__board">
+        @for (field of board; track i; let i = $index) {
+            <div class="game__board--field" [class.win]="winIndices.includes(i)">
+                {{ field }}
+            </div>
+        }
+    </div>
+    <div class="game__action">
+        <button class="button" (click)="cancelSearching.emit()">Cancel</button>
+    </div>
+</div>
+

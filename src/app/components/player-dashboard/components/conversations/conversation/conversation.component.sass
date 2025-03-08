@@ -1,0 +1,73 @@
+\:host
+    display: flex
+    .conversation
+        display: flex
+        flex-direction: column
+        width: 300px
+        height: 400px
+        background-color: var(--panel-color)
+        border: 1px solid var(--card-bg)
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)
+        margin-bottom: -32px
+        &.minimized
+            height: 42px
+            align-self: end
+        &__header
+            display: flex
+            padding: 8px
+            align-items: center
+            border-bottom: 1px solid var(--background-color)
+            &--player
+                display: flex
+                align-items: center
+                gap: 8px
+                flex: 1
+                color: var(--text-color)
+                font-weight: 600
+                .conversation-user-status
+                    width: 12px
+                    height: 12px
+                    border-radius: 50%
+                    background-color: var(--placeholder-text)
+                    &.active
+                        background-color: var(--success)
+            &--actions
+                display: flex
+                height: 24px
+                gap: 8px
+        &__content
+            display: flex
+            flex-direction: column
+            max-height: 300px
+            overflow-y: auto
+            scrollbar-width: thin
+            &--message-container
+                display: flex
+                justify-content: flex-start
+                .message
+                    display: flex
+                    width: 80%
+                    font-size: 14px
+                    margin: 8px
+                    background-color: var(--panel-secondary-color)
+                    padding: 8px
+                    border-radius: 8px
+                    color: var(--secondary-text-color)
+
+                &.my-message
+                    justify-content: flex-end
+                    .message
+                        background-color: var(--panel-light-color) !important
+
+        &__footer
+            display: flex
+            gap: 8px
+            padding: 8px
+            border-top: 1px solid var(--background-color)
+            &--send-button
+                border-radius: 0.5rem
+                border: none
+                background-color: var(--button-bg)
+                color: var(--text-color)
+                font-weight: bold
+                transition: background-color 0.3s ease

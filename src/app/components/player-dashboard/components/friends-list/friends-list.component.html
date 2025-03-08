@@ -1,0 +1,9 @@
+<div class="friends-list">
+    <div class="friends-list__header">Friends</div>
+    <div class="friends-list__search">
+        <text-input [showLabel]="false" [placeholder]="'Search'"></text-input>
+    </div>
+    @for (friend of friendsList?.friends; track friend) {
+        <friends-list-element [friend]="friend" (openChat)="openChat($event)"></friends-list-element>
+    }
+</div>

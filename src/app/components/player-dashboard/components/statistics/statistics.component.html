@@ -1,0 +1,32 @@
+<div class="player-statistics">
+    @if (!loading) {
+        <div class="player-statistics__column">
+            <div class="player-statistics__column--value-text wins">{{playerStats?.wins}}</div>
+            <div class="player-statistics__column--text">Wins</div>
+        </div>
+        <div class="player-statistics__column">
+            <div class="player-statistics__column--value-text losses">{{playerStats?.losses}}</div>
+            <div class="player-statistics__column--text">Losses</div>
+        </div>
+        <div class="player-statistics__column">
+            <div class="player-statistics__column--value-text draws">{{playerStats?.draws}}</div>
+            <div class="player-statistics__column--text">Draws</div>
+        </div>
+        <div class="player-statistics__column">
+            <div class="player-statistics__column--value-text">{{playerStats?.points}}</div>
+            <div class="player-statistics__column--text">Points</div>
+        </div>
+        <div class="player-statistics__column">
+            <div class="player-statistics__column--value-text">
+                @if (!playerStats?.ranking) {
+                    -
+                } @else {
+                    {{playerStats?.ranking}}
+                }
+            </div>
+            <div class="player-statistics__column--text">Ranking</div>
+        </div>
+    } @else {
+        <loader [width]="40"></loader>
+    }
+</div>

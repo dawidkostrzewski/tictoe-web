@@ -1,0 +1,35 @@
+@if (friend()) {
+    <div class="conversation" [class.minimized]="minimized">
+        <div class="conversation__header">
+            <div class="conversation__header--player" (click)="openConversation()">
+                <div class="conversation-username">{{friend().username}}</div>
+                <div class="conversation-user-status" [class.active]="friend().isOnline"></div>
+            </div>
+            <div class="conversation__header--actions">
+                @if (!minimized) {
+                    <tictoe-icon type="minimize" (click)="minimizeConversation()"></tictoe-icon>
+                }
+                <tictoe-icon type="close" (click)="closeConversation.emit(friend().playerId)"></tictoe-icon>
+            </div>
+        </div>
+        @if (!minimized) {
+            <div class="conversation__content">
+                @if (!loadingConversation) {
+                    @for (message of conversation.messages; track message) {
+                        <div class="conversation__content--message-container" [class.my-message]="message.userId === playerId()">
+                            <div class="message">{{message.content}}</div>
+                        </div>
+                    }
+                } @else {
+                    <loader [width]="40"></loader>
+                }
+            </div>
+            <div class="conversation__footer">
+                <text-input [placeholder]="'Send message'" [showLabel]="false" [type]="'textarea'"></text-input>
+                <button class="conversation__footer--send-button">
+                    <tictoe-icon type="send"></tictoe-icon>
+                </button>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,46 @@
+<div class="history-game-element">
+    <app-player-avatar [playerAvatarImage]="game().avatarImage"
+                       [username]="game().opponentUsername">
+    </app-player-avatar>
+    <div class="history-game-element__details">
+        <div class="history-game-element-details__row">
+            <div class="history-game-element-details__row--opponent-info-and-type">
+                <div class="opponent-info">{{game().opponentUsername}}</div>
+                <div class="game-type" [class.ranked]="game().isRankingGame">
+                    @if (game().isRankingGame) {
+                        Ranked
+                    } @else {
+                        Normal
+                    }
+                </div>
+            </div>
+            <div class="history-game-element-details__row--game-status">
+                <div class="game-status"
+                     [class.victory]="game().gameStatus === 'WIN'"
+                     [class.defeat]="game().gameStatus === 'LOSS'"
+                     [class.draw]="game().gameStatus === 'DRAW'">
+                    {{game().gameStatus | gameStatus}}
+                </div>
+            </div>
+        </div>
+
+        <div class="history-game-element-details__row">
+            <div class="history-game-element-details__row--game-time">
+                <div class="game-time">{{game().creationTime | formatDate}}</div>
+            </div>
+            <div class="history-game-element-details__row--game-points"
+                 [class.victory]="game().gameStatus === 'WIN'"
+                 [class.defeat]="game().gameStatus === 'LOSS'"
+                 [class.draw]="game().gameStatus === 'DRAW'">
+                @if (game().gainedPoints > 0) {
+                    +{{game().gainedPoints}}
+                } @else if (game().gainedPoints < 0) {
+                    {{game().gainedPoints}}
+                } @else {
+                    <div class="no-points">{{'No points'}}</div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

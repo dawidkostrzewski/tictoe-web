@@ -1,0 +1,10 @@
+@if (playerAvatarImage() || username()) {
+    @if (playerAvatarImage()) {
+        <img class="player-avatar" [src]="avatarImage" alt="none">
+    } @else {
+        <div class="player-avatar">
+            <span>{{username().charAt(0) | uppercase}}</span>
+        </div>
+    }
+
+}

@@ -1,0 +1,11 @@
+<div class="container">
+    <input required [type]="type()" class="input"
+           [placeholder]="placeholder()"
+           [value]="value"
+           [disabled]="disabled"
+           (input)="valueChanged($event)"
+           (blur)="onTouched()">
+    @if (showLabel()) {
+        <label class="label">{{label()}}</label>
+    }
+</div>

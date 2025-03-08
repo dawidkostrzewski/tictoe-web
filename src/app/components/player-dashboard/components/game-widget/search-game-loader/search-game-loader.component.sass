@@ -1,0 +1,38 @@
+\:host
+    display: flex
+    flex: 1
+    justify-content: center
+    align-items: center
+
+    .game
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 24px
+        &__loading-text
+            color: var(--text-color)
+            font-size: 18px
+        &__board
+            display: grid
+            grid-template-columns: repeat(3, 60px)
+            gap: 4px
+            background-color: var(--panel-color)
+
+            &--field
+                width: 60px
+                height: 60px
+                font-size: 14px
+                font-weight: bold
+                background-color: var(--panel-secondary-color)
+                color: var(--secondary-text-color)
+                display: flex
+                justify-content: center
+                align-items: center
+                &.win
+                    background-color: var(--success)
+
+        &__action
+            width: 100%
+            .button
+                width: 100%

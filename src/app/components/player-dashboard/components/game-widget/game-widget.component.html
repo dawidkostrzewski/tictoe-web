@@ -1,0 +1,24 @@
+<div class="game-widget">
+    @if (!searchingGame.search && !creatingNewGame) {
+        <div class="game-widget__header">Start new game</div>
+        <div class="game-widget__creating-game-container">
+            <button class="button-with-icon" (click)="createNewGame()">
+                <tictoe-icon type="add"></tictoe-icon>
+                <div>Create new game</div>
+            </button>
+            <button class="button-with-icon" (click)="searchRankingGame()">
+                <tictoe-icon type="trophy"></tictoe-icon>
+                <div>Ranking game</div>
+            </button>
+            <button class="button-with-icon" (click)="searchNormalGame()">
+                <tictoe-icon type="dices"></tictoe-icon>
+                <div>Normal game</div>
+            </button>
+        </div>
+    } @else if (creatingNewGame) {
+        <create-game-form (cancelCreation)="handleCancelCreation()" (startCreateGame)="handleStartCreatingGame($event)"></create-game-form>
+    } @else {
+        <search-game-loader (cancelSearching)="handleCancelSearching()"></search-game-loader>
+    }
+    <div class="game-widget__invites"></div>
+</div>

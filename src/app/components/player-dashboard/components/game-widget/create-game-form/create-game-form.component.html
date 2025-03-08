@@ -1,0 +1,17 @@
+<div class="create-game-form">
+    <div class="create-game-form__header section-header">
+        Creating new game
+    </div>
+    <div class="create-game-form__content">
+        <text-input [showLabel]="false" [placeholder]="'Search'"></text-input>
+        <div class="tab-container">
+            <button class="tab tab--1" [class.active-normal]="selectedOption === 'Normal'" (click)="selectedOption='Normal'">Normal</button>
+            <button class="tab tab--2" [class.active-ranked]="selectedOption === 'Ranked'" (click)="selectedOption='Ranked'">Ranked</button>
+            <div class="indicator"></div>
+        </div>
+    </div>
+    <div class="create-game-form__footer">
+        <button class="button" (click)="cancel()">Cancel</button>
+        <button class="button" (click)="createGame()">Create game</button>
+    </div>
+</div>

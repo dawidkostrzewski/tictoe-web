@@ -1,0 +1,23 @@
+@if (userContext) {
+    <div class="user-profile">
+        <div class="user-profile__container" (click)="openPlayerProfileWindow()">{{userContext.username.at(0) | uppercase}}</div>
+        @if (playerProfileOpened) {
+            <div class="user-profile-options" >
+                <div class="user-profile-options__header">
+                    <div class="user-profile-options__header--name">{{userContext.firstName}} {{userContext.lastName}}</div>
+                    <div class="user-profile-options__header--email">{{userContext.email}}</div>
+                </div>
+                <div class="user-profile-options__option" (click)="openSettings()">Settings</div>
+                <div class="user-profile-options__option" (click)="logout()">
+                    @if (!logoutInProgress) {
+                        <span>Logout</span>
+                    } @else {
+                        <loader [width]="20"></loader>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+}
+
