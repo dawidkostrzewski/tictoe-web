@@ -1,0 +1,12 @@
+{
+    "/tictoe-backend": {
+        "target": "http://localhost:8081",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/test": {
+        "target": "http://localhost:8081/tictoe-backend",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

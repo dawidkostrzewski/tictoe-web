@@ -1,0 +1,20 @@
+<div class="short-game-history">
+    <div class="short-game-history__header">
+        <div class="short-game-history__header--title">Latest games</div>
+    </div>
+    <div class="short-game-history__content">
+        @if (!loadingGames && latestHistoricalGames.length) {
+            @for (game of latestHistoricalGames; track game) {
+                <app-game-history-element [game]="game"></app-game-history-element>
+            }
+        } @else if (!loadingGames && !latestHistoricalGames.length) {
+            <div class="short-game-history__content--no-history">No match history</div>
+        }@else {
+            <loader [width]="40"></loader>
+        }
+    </div>
+    <div class="short-game-history__footer">
+
+    </div>
+</div>
+

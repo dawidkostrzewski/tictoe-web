@@ -1,0 +1,5 @@
+<div class="conversations">
+    @for (friend of conversations; track friend) {
+        <app-conversation [friend]="friend" [playerId]="playerId()" (closeConversation)="closeConversation($event)"></app-conversation>
+    }
+</div>

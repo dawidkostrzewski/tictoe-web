@@ -1,0 +1,7 @@
+<div class="game">
+    <div class="game__board">
+        <div class="game__board--field" *ngFor="let cell of board; let i = index" (click)="makeMove(i)">
+            {{ cell }}
+        </div>
+    </div>
+</div>

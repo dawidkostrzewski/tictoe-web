@@ -1,0 +1,39 @@
+\:host
+    display: flex
+    flex: 1
+    .player-profile
+        display: flex
+        flex: 1
+        flex-direction: column
+        &__details
+            display: flex
+            gap: 32px
+            &--info
+                display: flex
+                flex-direction: column
+                flex: 1
+                background-color: var(--panel-color)
+                padding: 16px
+                border-radius: 16px
+                .player-profile-details
+                    display: flex
+                    gap: 16px
+                    align-items: center
+                    &__player-info
+                        &--username
+                            color: var(--text-color)
+                            font-weight: 500
+                            font-size: 18px
+                        &--name
+                            color: var(--placeholder-text)
+                            font-size: 14px
+                    &__buttons
+                        display: flex
+                        flex-direction: column
+                        padding: 32px
+                        gap: 32px
+                        flex: 1
+                        justify-content: center
+
+            &--history
+                flex: 3

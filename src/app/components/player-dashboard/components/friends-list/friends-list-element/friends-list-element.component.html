@@ -1,0 +1,8 @@
+<div class="friend" (click)="openChat.emit(friend())">
+    <div class="friend__icon">
+        <span>{{friend().username.charAt(0) | uppercase}}</span>
+        <div class="friend__icon--status" [class.active]="friend().isOnline"></div>
+    </div>
+    <div class="friend__username">
+        {{friend().username}}</div>
+</div>

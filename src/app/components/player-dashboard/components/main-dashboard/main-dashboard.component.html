@@ -1,0 +1,15 @@
+<div class="main-dashboard">
+    <player-statistics [playerId]="userContext?.id"></player-statistics>
+    <div class="main-dashboard__content">
+        <div class="main-dashboard__content--right">
+            <game-widget [playerId]="userContext?.id"></game-widget>
+            <short-game-history [playerId]="userContext?.id"></short-game-history>
+        </div>
+        <div class="main-dashboard__content--left">
+        </div>
+    </div>
+    @for (message of messages; let i = $index; track i) {
+        {{message}}
+    }
+    <button class="button" (click)="sendMessage()">Send</button>
+</div>

@@ -1,0 +1,31 @@
+@if (userContextReady) {
+    <div class="dashboard">
+        <div class="dashboard__bar">
+            <div class="dashboard__bar--title-logo">
+            </div>
+            <div class="dashboard__bar--user-profile">
+                <player-profile></player-profile>
+            </div>
+        </div>
+        <div class="dashboard__container">
+            <div class="dashboard__container--left-panel">
+                <a class="dashboard-link" [routerLink]="'start'" [routerLinkActive]="'active-link'"><tictoe-icon type="game"></tictoe-icon>Dashboard</a>
+                <a class="dashboard-link" [routerLink]="'ranking'" [routerLinkActive]="'active-link'"><tictoe-icon type="leaderboard"></tictoe-icon> Leaderboard</a>
+                <a class="dashboard-link" [routerLink]="'friends'" [routerLinkActive]="'active-link'"><tictoe-icon type="friends"></tictoe-icon>Friends</a>
+                <a class="dashboard-link" [routerLink]="'games-history'" [routerLinkActive]="'active-link'"><tictoe-icon type="history"></tictoe-icon>Games history</a>
+            </div>
+            <div class="dashboard__container--center-panel">
+                <div class="page-wrapper">
+                    <router-outlet></router-outlet>
+                </div>
+                <div class="messages-wrapper">
+                    <app-conversations [playerId]="userContext?.id"></app-conversations>
+                </div>
+            </div>
+            <div class="dashboard__container--right-panel">
+                <friends-list [playerId]="userContext?.id"></friends-list>
+            </div>
+        </div>
+    </div>
+}
+

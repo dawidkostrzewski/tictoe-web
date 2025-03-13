@@ -1,0 +1,14 @@
+@if (control().touched && control().invalid) {
+
+    <div class="form-input-error">
+        @if (control().hasError('required')) {
+           Field is required.
+        }
+        @if (control().hasError('minlength')) {
+            Password must have minimum {{control().getError('minlength').requiredLength}} characters.
+        }
+        @if (control().hasError('email')) {
+            Invalid e-mail format.
+        }
+    </div>
+}

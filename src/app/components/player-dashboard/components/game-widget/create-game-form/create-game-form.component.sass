@@ -1,0 +1,80 @@
+\:host
+    display: flex
+    flex: 1
+    .create-game-form
+        display: flex
+        flex-direction: column
+        gap: 24px
+        flex: 1
+        &__content
+            padding: 16px
+            display: flex
+            flex-direction: column
+            gap: 24px
+        &__footer
+            padding: 16px
+            display: flex
+            gap: 24px
+            align-items: center
+            justify-content: space-evenly
+
+            .button
+                width: 100%
+
+    .tab-container
+        display: flex
+        flex-direction: row
+        align-items: flex-start
+        position: relative
+        padding: 3px
+        background-color: var(--input-bg)
+        border-radius: 9px
+
+
+    .indicator
+        content: ""
+        width: calc(50% - 2px)
+        height: 28px
+        background: #FFFFFF
+        position: absolute
+        top: 2px
+        left: 2px
+        z-index: 2
+        border: 0.5px solid rgba(0, 0, 0, 0.04)
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04)
+        border-radius: 7px
+        transition: all 0.2s ease-out
+
+
+    .tab
+        width: 50%
+        height: 28px
+        position: relative
+        z-index: 3
+        background-color: transparent
+        border: 0
+        outline: none
+        flex: none
+        align-self: stretch
+        flex-grow: 1
+        cursor: pointer
+        color: var(--text-color)
+        font-weight: 600
+
+
+    .tab--1:hover ~ .indicator
+        left: 2px
+        background-color: #6a717f
+
+
+    .tab--2:hover ~ .indicator
+        left: calc(50% - 2px)
+        background-color: #8a5bf4
+
+    .active-normal ~ .indicator
+        left: 2px
+        background-color: #6a717f
+
+    .active-ranked ~ .indicator
+        left: calc(50% - 2px)
+        background-color: #8a5bf4
