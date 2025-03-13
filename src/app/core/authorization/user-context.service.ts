@@ -21,9 +21,10 @@ export class UserContextService {
     }
 
     constructor(private readonly keycloak: Keycloak) {
+        console.log("User context service constructor");
         const keycloakSignal = inject(KEYCLOAK_EVENT_SIGNAL);
 
-        effect(() => {
+        /*effect(() => {
             const keycloakEvent = keycloakSignal();
             if (keycloakEvent.type === KeycloakEventType.Ready) {
                 this.keycloak.loadUserInfo().then( userInfo => {
@@ -42,6 +43,11 @@ export class UserContextService {
             if (keycloakEvent.type === KeycloakEventType.AuthLogout) {
                 this._userContext = null;
             }
-        });
+        });*/
+    }
+
+    init(userInfo: KeycloakUserInfo) {
+        console.log('user service init', userInfo)
+        this._userContext = new UserContext(userInfo);
     }
 }

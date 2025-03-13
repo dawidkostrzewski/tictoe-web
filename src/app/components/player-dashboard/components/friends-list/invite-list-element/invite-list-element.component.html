@@ -1,0 +1,15 @@
+<div class="invite">
+    <div class="invite__details">
+        <div>{{invite().username}}</div>
+    </div>
+    <div class="invite__actions">
+        <button class="button-with-icon positive-action" (click)="acceptInviteEvent.emit(invite().inviteId)">
+            <tictoe-icon type="check"></tictoe-icon>
+            <div>Accept</div>
+        </button>
+        <button class="button-with-icon" (click)="declineInviteEvent.emit(invite().inviteId)">
+            <tictoe-icon type="close"></tictoe-icon>
+            <div>Decline</div>
+        </button>
+    </div>
+</div>

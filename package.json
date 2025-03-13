@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --public-host=http://192.168.100.237:4200 --ssl --ssl-key cert/localhost-key.pem  --ssl-cert cert/localhost.pem",
-        "build": "ng build",
+        "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 ng serve --proxy-config proxy.conf.json --ssl --ssl-key cert/localhost-key.pem  --ssl-cert cert/localhost.pem",
+        "build": "ng build --configuration=production --base-href=/tictoe/",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },

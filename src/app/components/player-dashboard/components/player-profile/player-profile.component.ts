@@ -5,6 +5,7 @@ import {UpperCasePipe} from '@angular/common';
 import Keycloak from 'keycloak-js';
 import {DashboardService} from '../../service/dashboard.service';
 import {LoaderComponent} from '../../../../share/loader/loader.component';
+import {PlayersService} from '../../service/players.service';
 
 @Component({
   selector: 'player-profile',
@@ -24,7 +25,7 @@ export class PlayerProfileComponent implements OnInit {
     private elementRef = inject(ElementRef);
     private readonly userContextService = inject(UserContextService);
     private readonly keycloak = inject(Keycloak);
-    private readonly service = inject(DashboardService);
+    private readonly service = inject(PlayersService);
 
     @HostListener('document:click', ['$event'])
     onClickOutside(event: Event) {

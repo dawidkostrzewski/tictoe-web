@@ -13,7 +13,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class PlayerAvatarComponent {
 
     playerAvatarImage = input<string | null>();
-    username = input.required<string>();
+    username = input<string | undefined>();
 
     private readonly sanitizer = inject(DomSanitizer);
 

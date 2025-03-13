@@ -1,0 +1,25 @@
+<div class="leaderboard-element" (click)="goToPlayerProfile(player().playerId)">
+    <div class="leaderboard-element__player-info">
+        <div class="leaderboard-element__player-info--avatar">
+            <app-player-avatar [username]="player().username"></app-player-avatar>
+        </div>
+        <div class="leaderboard-element__player-info--details">
+            <div class="leaderboard-username">{{player().username}}</div>
+            <div class="leaderboard-points">Total points: {{player().points}}</div>
+        </div>
+    </div>
+    <div class="leaderboard-element__player--statistics">
+        <div class="leaderboard-statistic-container">
+            <div class="leaderboard-statistic-container__number wins">{{player().wins}}</div>
+            <div class="leaderboard-statistic-container__text">Wins</div>
+        </div>
+        <div class="leaderboard-statistic-container">
+            <div class="leaderboard-statistic-container__number losses">{{player().losses}}</div>
+            <div class="leaderboard-statistic-container__text">Losses</div>
+        </div>
+        <div class="leaderboard-statistic-container">
+            <div class="leaderboard-statistic-container__number draws">{{player().draws}}</div>
+            <div class="leaderboard-statistic-container__text">Draws</div>
+        </div>
+    </div>
+</div>

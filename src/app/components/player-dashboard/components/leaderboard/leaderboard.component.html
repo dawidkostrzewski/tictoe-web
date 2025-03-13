@@ -1,0 +1,16 @@
+<div class="leaderboard">
+    <div class="leaderboard__table">
+        <div class="leaderboard__table--header section-header">
+            Leaderboard
+        </div>
+        <div class="leaderboard__table--content">
+            @if (!loading) {
+                @for (player of players; track player) {
+                    <app-leaderboard-element [player]="player"></app-leaderboard-element>
+                }
+            } @else {
+                <loader [width]="120"></loader>
+            }
+        </div>
+    </div>
+</div>

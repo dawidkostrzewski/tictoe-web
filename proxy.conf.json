@@ -1,12 +1,12 @@
 {
     "/tictoe-backend": {
-        "target": "https://192.168.100.237",
-        "secure": true,
+        "target": "http://localhost:8081",
+        "secure": false,
         "changeOrigin": true
     },
-    "/auth": {
-        "target": "https://192.168.100.237",
-        "secure": true,
+    "/test": {
+        "target": "http://localhost:8081/tictoe-backend",
+        "secure": false,
         "changeOrigin": true
     }
 }

@@ -25,8 +25,8 @@
                 }
             </div>
             <div class="conversation__footer">
-                <text-input [placeholder]="'Send message'" [showLabel]="false" [type]="'textarea'"></text-input>
-                <button class="conversation__footer--send-button">
+                <text-input [placeholder]="'Send message'" [showLabel]="false" [type]="'textarea'" [(ngModel)]="newMessageText"></text-input>
+                <button class="conversation__footer--send-button" (click)="sendMessage()">
                     <tictoe-icon type="send"></tictoe-icon>
                 </button>
             </div>

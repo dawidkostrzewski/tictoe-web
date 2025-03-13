@@ -1,9 +1,10 @@
 import {Routes} from '@angular/router';
 import {MainDashboardComponent} from './components/main-dashboard/main-dashboard.component';
-import {RankingComponent} from './components/ranking/ranking.component';
+import {LeaderboardComponent} from './components/leaderboard/leaderboard.component';
 import {PlayerDashboardComponent} from './player-dashboard.component';
 import {FriendsPageComponent} from './components/friends-page/friends-page.component';
 import {GamesHistoryPageComponent} from './components/game-history/games-history-page/games-history-page.component';
+import {VisitPlayerProfileComponent} from './components/visit-player-profile/visit-player-profile.component';
 
 export const DashboardRoutes: Routes = [
     {
@@ -18,7 +19,7 @@ export const DashboardRoutes: Routes = [
             },
             {
                 path: "ranking",
-                component: RankingComponent
+                component: LeaderboardComponent
             },
             {
                 path: "friends",
@@ -27,6 +28,10 @@ export const DashboardRoutes: Routes = [
             {
                 path: "games-history",
                 component: GamesHistoryPageComponent
+            },
+            {
+                path: "player/:id",
+                component: VisitPlayerProfileComponent
             }
         ]
     }

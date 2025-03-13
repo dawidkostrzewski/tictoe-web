@@ -3,7 +3,19 @@
     <div class="friends-list__search">
         <text-input [showLabel]="false" [placeholder]="'Search'"></text-input>
     </div>
-    @for (friend of friendsList?.friends; track friend) {
-        <friends-list-element [friend]="friend" (openChat)="openChat($event)"></friends-list-element>
+    @if (!loading) {
+        @for (invite of invites; track invite) {
+            <invite-list-element
+                [invite]="invite"
+                (acceptInviteEvent)="acceptInviteEventHandler($event)"
+                (declineInviteEvent)="declineInviteEventHandler($event)">
+            </invite-list-element>
+        }
+        @for (friend of friendsList; track friend) {
+            <friends-list-element [friend]="friend" (openChat)="openChat($event)"></friends-list-element>
+        }
+    } @else {
+        <loader [width]="40"><</loader>
     }
+
 </div>
